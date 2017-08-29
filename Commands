@@ -1,0 +1,379 @@
+1.Command to view current working directory
+Answer-pwd
+
+
+2.Command for create file
+Answer- cat > filename.txt
+
+
+3.Command for create directory
+Answer-mkdir dir-name
+
+
+4.Command Traverse between directory
+Answer-cd dir-name (Change the working directory)
+       cd ..  (Go back to the parent directory)
+       cd  (Go back to home directory)
+
+
+
+5.Command to copy the file
+Answer-cp
+    Syntax- cp [options] source dest
+
+
+6.Command to remove the file
+Answer- rm {file-name}
+
+
+7.Command to move the file
+Answer- mv [options] source dest
+
+
+8.Command to view the command history
+Answer-history
+
+
+9.Command to search the file
+Answer-(a).To find a file by name, type
+               find -name "query"
+       (b)To find a file by name, but ignore the case of the query, type
+               find -iname "query"
+
+
+10.filte/search from output of any command
+Answer- grep
+
+
+11.Command to Difference between two files
+Answer-diff file1 file2( To Compare Two Files Using Linux)
+   
+      diff -q file1 file2(To Just Show If The Files Are Different)
+
+
+12.Convert folder to zip file
+Answer-zip -r archive-name directory-name
+
+
+13.Unzip file command
+Answer-unzip file.zip
+
+
+14.Command to install any software
+Answer- apt-get install ${packagename}
+
+
+
+15.command for ssh login
+Answer- ssh localhost
+            OR
+        ssh root@example.com
+
+
+16.copy folder from server to local and local to server through command
+Answer- 1. Copying data to Remote Server
+            scp SourceFile user@server:directory/TargetFile
+
+        2. Copying data from Remote Server
+            scp user@server:directory/SourceFile TargetFile
+
+
+
+17.Command for change the file permission
+Answer- chmod rwx
+e.g-   chmod 744 myfile.ext
+
+
+        Permission to read, r, is given the numeric value of 4
+	Permission to write, w, is given the value 2
+	Permission to execute, x, is given the value 1
+
+
+
+18.Initialize a project with git
+     Create a directory to contain the project.
+	Go into the new directory.
+	Type git init.
+	Type git add to add the files.
+	Type git commit.
+
+
+19.Clone a project from git
+Answer-git clone git@github.com:whatever folder-name
+
+
+
+20.Type of clone and difference between them
+
+ 
+VMware Workstation 5.0
+
+Features | Documentation | Knowledge Base | Discussion Forums
+previous Prev   Contents   Last   Next next
+
+Types of Clone: Full and Linked
+
+There are two types of clone:
+
+The Full Clone — A full clone is an independent copy of a virtual machine that shares nothing with the parent virtual machine after the cloning operation. Ongoing operation of a full clone is entirely separate from the parent virtual machine.
+The Linked Clone — A linked clone is a copy of a virtual machine that shares virtual disks with the parent virtual machine in an ongoing manner. This conserves disk space, and allows multiple virtual machines to use the same software installation.
+
+
+Difference Between Full Clone and Linked Clone
+
+A full clone is an independent virtual machine, with no need to access the parent. A linked clone must have continued access to the parent. Without access to the parent, a linked clone is disabled. See Linked Clone and Access to the Parent Virtual Machine
+
+A linked clone is made from a snapshot of the parent.In brief, all files available on the parent at the moment of the snapshot continue to remain available to the linked clone. Ongoing changes to the virtual disk of the parent do not affect the linked clone, and changes to the disk of the linked clone do not affect the parent.
+
+
+
+21.Create Branch
+Answer- git branch <branchname>
+
+22.Traverse between git branches
+Answer- git checkout <branchname>
+
+
+23.Merge git branch
+Answer-check out the branch you wish to merge into and then run the git merge command: git merge <branchname>
+
+
+24.Rebase branch
+Answer-The git rebase command allows us to easily change a series of commits, modifying the history of your repository. You can reorder, edit, or squash commits together.
+
+Typically, we would use git rebase to:
+
+Edit previous commit messages
+Combine multiple commits into one
+Delete or revert commits that are no longer necessary
+
+
+25.View the history of commit
+Answer- git log
+
+
+26.pull code from git
+Answer-git clone git@github.com:YOUR_USERNAME/YOUR_PROJECT.git
+
+
+
+27.Command for list all the added ssh key 
+Answer- ls -al ~/.ssh
+
+
+
+28.Steps to generate and add ssh key
+Answer-   Generating a new SSH key
+
+1.Open Terminal.
+
+2.Paste the text below, substituting in your GitHub email address.
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+This creates a new ssh key, using the provided email as a label.
+
+Generating public/private rsa key pair.
+
+3.When you're prompted to "Enter a file in which to save the key," press Enter. This accepts the default file location.
+
+ Enter a file in which to save the key (/home/you/.ssh/id_rsa): [Press enter]
+
+4.At the prompt, type a secure passphrase. For more information, see "Working with SSH key passphrases".
+Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]
+
+
+<-->Adding your SSH key to the ssh-agent<--->
+
+
+1.Start the ssh-agent in the background.
+
+eval "$(ssh-agent -s)"
+Agent pid 59566
+
+
+2.Add your SSH private key to the ssh-agent. If you created your key with a different name, or if you are adding an existing key that has a different name, replace id_rsa in the command with the name of your private key file.
+
+ssh-add ~/.ssh/id_rsa
+Add the SSH key to your GitHub account.
+
+
+<-->Adding a new SSH key to your GitHub account<--->
+
+1.Copy the SSH key to your clipboard.
+
+If your SSH key file has a different name than the example code, modify the filename to match your current setup. When copying your key, don't add any newlines or whitespace.
+
+$ sudo apt-get install xclip
+# Downloads and installs xclip. If you don't have `apt-get`, you might need to use another installer (like `yum`)
+
+$ xclip -sel clip < ~/.ssh/id_rsa.pub
+# Copies the contents of the id_rsa.pub file to your clipboard
+Tip: If xclip isn't working, you can locate the hidden .ssh folder, open the file in your favorite text editor, and copy it to your clipboard.
+
+2.In the upper-right corner of any page, click your profile photo, then click Settings.
+
+
+3.In the user settings sidebar, click SSH and GPG keys.
+
+
+4.Click New SSH key or Add SSH key.
+
+5.In the "Title" field, add a descriptive label for the new key. For example, if you're using a personal Mac, you might call this key "Personal MacBook Air".
+
+6.Paste your key into the "Key" field.
+
+7.Click Add SSH key.
+
+8.If prompted, confirm your GitHub password.
+
+
+
+
+29.Commands to verify that you have successfully connected with github or not
+Answer- ssh -T git@github.com
+
+
+
+30.How to Manage multiple ssh key for github
+Answer-
+
+Step 1: ssh keys 
+Create any keypairs you'll need. In this example I've named me default/original 'id_rsa' (which is the default) and my new one 'id_rsa-work':
+
+ssh-keygen -t rsa -C "stefano@work.com"
+
+Step 2: ssh config 
+Set up multiple ssh profiles by creating/modifying ~/.ssh/config. Note the slightly differing 'Host' values:
+
+# Default GitHub
+Host github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa
+
+# Work GitHub
+Host work.github.com
+    HostName github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa_work
+
+
+Step 3: ssh-add 
+You may or may not have to do this. To check, list identity fingerprints by running:
+
+$ ssh-add -l
+2048 1f:1a:b8:69:cd:e3:ee:68:e1:c4:da:d8:96:7c:d0:6f stefano (RSA)
+2048 6d:65:b9:3b:ff:9c:5a:54:1c:2f:6a:f7:44:03:84:3f stefano@work.com (RSA)
+If your entries aren't there then run:
+
+ssh-add ~/.ssh/id_rsa_work
+
+
+Step 4: test 
+To test you've done this all correctly, I suggest the following quick check:
+
+$ ssh -T git@github.com
+Hi stefano! You've successfully authenticated, but GitHub does not provide shell access.
+
+$ ssh -T git@work.github.com
+Hi stefano! You've successfully authenticated, but GitHub does not provide shell access
+
+
+
+31.How would you handle if you are trying to clone any project from git through ssh and getting permission error.
+Answer- First start by setting up your own public/private key pair set. This can use either DSA or RSA, so basically any key you setup will work. On most systems you can use ssh-keygen.
+
+1.First you'll want to cd into your .ssh directory. Open up the terminal and run:
+
+	cd ~/.ssh && ssh-keygen
+
+2.Next you need to copy this to your clipboard.
+
+	On Linux run: cat id_rsa.pub | xclip
+
+3.Add your key to your account via the website.
+
+4.Finally setup your .gitconfig.
+	git config --global user.name "bob"
+	git config --global user.email bob@... (don't forget to restart your command line to make sure the config is reloaded)
+Thats it you should be good to clone and checkout.
+
+
+32.Command to change git config name and email
+Answer-
+You can change your Git username like this:
+  
+    git config --global user.name "Kumar Anand"
+
+
+Git username on a per-project basis like this, without the --global option:
+
+    git config user.name "Alvin J. Alexander"
+
+
+And you can change your Git email address like this:
+
+      git config --global user.email [your email address here]
+
+
+
+
+33.Command to view the current git user name and email
+Answer-   
+      Username- git config user.name
+
+      Email- git config user.email
+          
+                OR
+
+         git config --list
+
+
+
+34.git Command to delete all local changes and revert the deleted code (two commands)
+Answer-  
+
+To delete all local changes- git stash -u
+
+Revert the deleted code- git checkout $commit~1 filename   OR   git reset --hard HEAD
+
+
+
+35.How To change the commit message if you have committed locally
+Anwer-  git commit --amend
+
+
+
+36.How to change the commit message if you have pushed on live server.
+Answer-
+
+
+First, change the local commit message:
+
+git commit --amend -m "New commit message"
+Then, force pushing again:
+
+git push -f
+
+
+
+37.How to delete last two commit from local and server.
+Answer- 
+
+To remove the last two commits locally- git reset --hard HEAD~2
+
+
+To remove the last two commits on server- git push origin HEAD~2 --force
+
+
+
+
+
+
+
+
+
+
+
+
